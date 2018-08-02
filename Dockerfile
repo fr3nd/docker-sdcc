@@ -23,6 +23,6 @@ RUN curl -L https://kent.dl.sourceforge.net/project/sdcc/sdcc/${SDCC_VERSION}/sd
     ./configure --prefix=/usr && \
     make && \
     make install && \
-    rm -rf /usr/src/deluge
+    rm -rf /usr/src/sdcc
 WORKDIR /usr/src
 
