@@ -24,5 +24,17 @@ RUN curl -L https://kent.dl.sourceforge.net/project/sdcc/sdcc/${SDCC_VERSION}/sd
     make && \
     make install && \
     rm -rf /usr/src/sdcc
+
+ENV HEX2BIN_VERSION 2.5
+
+RUN mkdir -p /usr/src/hex2bin
+WORKDIR /usr/src/hex2bin
+RUN curl -L https://netcologne.dl.sourceforge.net/project/hex2bin/hex2bin/Hex2bin-${HEX2BIN_VERSION}.tar.bz2 | \
+    tar xvj --strip-components=1 && \
+    make clean || true && \
+    make && \
+    cp hex2bin /usr/bin && \
+    rm -rf /usr/src/hex2bin
+
 WORKDIR /usr/src
 
