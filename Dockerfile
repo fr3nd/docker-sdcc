@@ -1,7 +1,7 @@
 FROM debian:jessie
 MAINTAINER Carles Amigó, fr3nd@fr3nd.net
 
-ENV SDCC_VERSION 3.7.0
+ENV SDCC_VERSION 3.8.0
 
 RUN apt-get update && apt-get install -y \
       bison \
@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
       gputils \
       libboost-dev \
       texinfo \
+      zlib1g-dev \
       && rm -rf /usr/share/doc/* && \
       rm -rf /usr/share/info/* && \
       rm -rf /tmp/* && \
