@@ -1,7 +1,7 @@
-FROM debian:jessie
+FROM debian:sid
 MAINTAINER Carles Amigó, fr3nd@fr3nd.net
 
-ENV SDCC_VERSION 3.8.0
+ENV SDCC_VERSION 3.9.0
 
 RUN apt-get update && apt-get install -y \
       bison \
